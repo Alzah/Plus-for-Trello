@@ -1,7 +1,9 @@
 {
+"update_url": "https://clients2.google.com/service/update2/crx",
+
   "name": "__MSG_extName__",
   "short_name": "Plus for Trello",
-  "version": "5.1.0",
+  "version": "6.0.2",
   "manifest_version": 2,
   "default_locale": "en",
   "description": "__MSG_extDescription__",
@@ -14,8 +16,7 @@
   "background": {
     "page": "background.html"
   },
-
-  "homepage_url": "http://www.plusfortrello.com",
+  "homepage_url": "https://www.plusfortrello.com",
   "oauth2": {
     "client_id": "147493868263-rau69q6puvkskc83li1neonnbo0aelp9.apps.googleusercontent.com",
     "scopes": [
@@ -24,7 +25,6 @@
       "https://www.googleapis.com/auth/chromewebstore.readonly"
     ]
   },
-
   "browser_action": {
     "default_icon": {
       "19": "images/icon19.png"
@@ -32,11 +32,12 @@
     "default_title": "Plus for Trello",
     "default_popup": "popup.html"
   },
-
   "content_scripts": [
     {
       "all_frames": true,
-      "matches": [ "https://trello.com/*" ],
+      "matches": [
+        "https://trello.com/*"
+      ],
       "js": [
         "libs/jquery.min.js",
         "libs/jquery-ui.custom.min.js",
@@ -65,7 +66,16 @@
         "tour.js",
         "translations.js"
       ],
-      "css": [ "css/style.css", "css/colors.css", "css/tooltip.css", "css/grumble.css", "css/dialog-polyfill.css", "css/tablesorter.css", "css/jquery-ui-custom.min.css", "css/select2.min.css"],
+      "css": [
+        "css/style.css",
+        "css/colors.css",
+        "css/tooltip.css",
+        "css/grumble.css",
+        "css/dialog-polyfill.css",
+        "css/tablesorter.css",
+        "css/jquery-ui-custom.min.css",
+        "css/select2.min.css"
+      ],
       "run_at": "document_start"
     }
   ],
@@ -78,6 +88,23 @@
     "css/images/*.gif",
     "stripe-wrap.js"
   ],
-  "optional_permissions": [ "https://*.stripe.com/", "https://*.cloudfunctions.net/", "clipboardWrite", "https://spreadsheets.google.com/", "https://ssl.google-analytics.com/", "https://www.googleapis.com/", "alarms", "gcm", "bookmarks" ],
-  "permissions": ["identity", "storage", "unlimitedStorage", "notifications", "webRequest", "webRequestBlocking", "https://trello.com/", "https://trello.com/1/*"]
+  "optional_permissions": [
+    "https://*.stripe.com/",
+    "https://*.cloudfunctions.net/",
+    "clipboardWrite",
+    "https://spreadsheets.google.com/",
+    "https://ssl.google-analytics.com/",
+    "https://www.googleapis.com/",
+    "bookmarks"
+  ],
+  "permissions": [
+    "identity",
+    "storage",
+    "unlimitedStorage",
+    "notifications",
+    "webRequest",
+    "webRequestBlocking",
+    "https://trello.com/",
+    "https://trello.com/1/*"
+  ]
 }
